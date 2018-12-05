@@ -15,29 +15,9 @@ app.get('/', (req, res) => {
       '<input type="submit" value="Aceptar">'+
       '</form>'
     )*/
-    //res.status(404).send('Página no encontrada')
-  //res.sendStatus(200)
-  //res.sendStatus(403)
-  //res.sendStatus(404)
-  //res.sendStatus(500)
-  /*
-  res.json({
-    nombre: "Pablo",
-    apellido_paterno: "González",
-    apellido_materno: "Alvarado"
-  })*/
-  /*
-  res.cookie('username', 'Pablo', {
-    domain: '.pablo.com',
-    path: '/administrator',
-    secure: true
-  }).send('cookie')*/
-  /*
-  res.cookie('username', 'Flavio',{
-      expires: new Date(Date.now() + 60),
-      httpOnly: true
-  }).send('cookie')
-  console.log(req.query)*/
+    //console.log(req.headers)
+  console.log(req.header('User-Agent'))
+    res.send('')
 })
 
 //Petición POST desde raíz
