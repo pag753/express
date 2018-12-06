@@ -16,8 +16,28 @@ app.get('/', (req, res) => {
       '</form>'
     )*/
     //console.log(req.headers)
-  console.log(req.header('User-Agent'))
-    res.send('')
+  //console.log(req.header('User-Agent'))
+    //res.send('')
+  //res.redirect('/go-there')
+  //res.redirect('https://google.com')
+  res.redirect(404, '/go-there')
+})
+
+app.get('/mayusculas/:valor', (req, res) => {
+//app.get('/mayuscula(s){1,8}/:valor', (req, res) => {
+    res.send(req.params.valor.toUpperCase())
+    //res.send("Estas aqui")
+})
+
+app.get('/cuadrado/:valor', (req, res) => {
+    //Convertir a numero
+    let numero = req.params.valor * 1
+  //Elevar al cuadrado
+  numero = numero ** 2
+  //Mandarlo
+  //res.send(numero + "")
+  res.send(`${numero}`)
+  //res.send("Estas aqui")
 })
 
 //Petición POST desde raíz
